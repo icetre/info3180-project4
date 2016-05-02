@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block head %} 
+{{super()}}
+<link rel="stylesheet" type="text/css" href="../static/css/form.css">
+
+{% endblock %}
+
+{% block main %}
+
+<form class="center" action="" method="post" name="{{formname}}">
+<div class="form-group">
+	{{ form.recepientAddr.label }}
+	{{form.recepientAddr(class_="form-control")}}
+	
+</div>
+ {% for error in form.recepientAddr.errors %}
+   <div class="alert alert-danger">
+  {{error}}
+  </div>
+  {% endfor %}
+
+<div class="form-group">
+{{ form.Subject.label }}
+	{{form.Subject(class_="form-control")}}
+</div>
+	 {% for error in form.Subject.errors %}
+   <div class="alert alert-danger">
+  {{error}}
+  {% endfor %}
+
+</div>
+<div class="form-group">
+{{ form.Body.label }}
+	{{form.Body(class_="form-control")}}
+</div>
+ {% for error in form.Body.errors %}
+   <div class="alert alert-danger">
+  {{error}}
+  {% endfor %}
+
+</div>
+<div class="form-group">
+{{ form.url.label }}
+	{{form.url(class_="form-control")}}
+</div>
+ {% for error in form.url.errors %}
+   <div class="alert alert-danger">
+  {{error}}
+  {% endfor %}
+
+</div>
+<button class="btn btn-primary" type="submit" name="login">send</button>
+</form>
+{% endblock %}

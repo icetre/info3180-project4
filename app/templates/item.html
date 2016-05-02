@@ -1,0 +1,10 @@
+{% block head %}
+{% endblock %}
+{% block item %}
+<div class="item">
+	<h3 class="item-title">{{item.info3180_title}}</h3>
+	<div class="thumb"><img class="img-thumbnail" src="{{item.info3180_thumbnail}}"></div>
+	<p class="item-desc">{{item.info3180_description}}</p>
+	<a class="btn btn-primary" href="{{url_for('.sendemail')+ '?url='+item.info3180_url}}" name="login">Share Wishlist</a>
+</div>
+ {% endblock %}

@@ -1,0 +1,13 @@
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/item.css')}}">
+{% endblock %}
+{% block item %}
+<div class="item">
+	<div class="thumb"><img class="img-thumbnail" src="{{img}}"></div>
+
+</div>
+ {% endblock %}
+
+{% block button %}
+	<a class="btn btn-primary" href="{{url_for('.addwish')+ '?url='+img }}" name="login">Add Thumbnail</a>
+ {% endblock %}

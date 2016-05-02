@@ -1,0 +1,33 @@
+{% extends "baseform.html" %}
+
+{% block head %} 
+{{super()}} 
+{% endblock %}
+
+{% block main %}
+
+{{super()}}
+
+<div class="form-group">
+	<label for="info3180_retype_password"> retype-password</label>
+	{{ form.info3180_retype_password(class_="form-control")}}
+</div>
+ {% for error in form.info3180_retype_password.errors %}
+   <div class="alert alert-danger">
+  {{error}}
+  </div>
+  {% endfor %}
+
+<div class="form-group">
+	<label for="info3180_email"> email</label>
+	{{ form.info3180_email(class_="form-control")}}
+</div>
+ {% for error in form.info3180_email.errors %}
+   <div class="alert alert-danger">
+  {{error}}
+  </div>
+  {% endfor %}
+<div>
+<button class="btn btn-primary" type="submit" name="submit">Submit</button>
+</div>
+{% endblock %}

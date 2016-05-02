@@ -1,0 +1,20 @@
+{% extends "baseform.html" %}
+
+{% block head %}
+{{super()}}
+{% endblock %}
+
+{% block main %}
+<form class="center" method="post" action="" name="{{formname}}">
+	<div class="form-group">
+		{{form.info3180_url.label}}
+		{{form.info3180_url(class_="form-control")}}
+	</div>
+ 	{% for error in form.info3180_url.errors %}
+   		<div class="alert alert-danger">
+  			{{error}}
+  		</div>
+  	{% endfor %}
+<button class="btn btn-primary" type="submit" name="thumblist">View image list</button>
+{% endblock %}
+</form>

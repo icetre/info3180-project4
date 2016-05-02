@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block head %} 
+{{super()}}
+<link rel="stylesheet" type="text/css" href="../static/css/form.css">
+
+{% endblock %}
+
+{% block main %}
+
+
+<form class="center" action="" method="post" name="{{formname}}">
+<div class="form-group"><label for="username">username </label>
+	{{form.info3180_username(class_="form-control")}}
+</div>
+ {% for error in form.info3180_username.errors %}
+   <div class="alert alert-danger">
+  {{error}}
+  </div>
+  {% endfor %}
+
+<div class="form-group">
+<label for="info3180_password">password</label>
+	{{form.info3180_password(class_="form-control")}}
+</div>
+	 {% for error in form.info3180_password.errors %}
+   <div class="alert alert-danger">
+  {{error}}
+  {% endfor %}
+
+</div>
+{% endblock %}
+</form>
